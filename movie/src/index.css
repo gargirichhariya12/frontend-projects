@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 8%; /* Dark Blue Background */
+    --foreground: 220 10% 98%;
+
+    --card: 220 20% 12%; /* Slightly lighter dark blue for cards */
+    --card-foreground: 220 10% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 220 10% 98%;
+
+    --primary: 220 85% 48%; /* Blue primary color */
+    --primary-foreground: 220 10% 98%;
+
+    --secondary: 220 13% 20%;
+    --secondary-foreground: 220 10% 98%;
+
+    --muted: 220 13% 20%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 220 85% 48%; /* Blue accent */
+    --accent-foreground: 220 10% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 220 85% 48%;
+
+    --radius: 0.5rem;
+
+    --netflix-dark: 220 20% 8%; /* Updated Netflix dark color */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-netflix-dark text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #root {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+@layer components {
+  .movie-card {
+    @apply relative overflow-hidden rounded-md transition-all duration-300;
+  }
+
+  .movie-card:hover {
+    @apply shadow-xl scale-105 z-10;
+  }
+
+  .movie-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .movie-card:hover .movie-card-content {
+    @apply opacity-100;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  }
+  
+  .netflix-gradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(to top, #141414 10%, transparent 90%);
+  }
+
+  /* Hide scrollbar for all browsers */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "happy": [
+        {"title": "Paddington 2", "rating": "8.0"},
+        {"title": "The Intouchables", "rating": "8.5"}
+    ],
+    "sad": [
+        {"title": "Inside Out", "rating": "8.1"},
+        {"title": "The Pursuit of Happyness", "rating": "8.0"}
+    ],
+    "angry": [
+        {"title": "John Wick", "rating": "7.4"},
+        {"title": "Mad Max: Fury Road", "rating": "8.1"}
+    ],
+    "neutral": [
+        {"title": "Inception", "rating": "8.8"},
+        {"title": "Interstellar", "rating": "8.6"}
+    ]
+}

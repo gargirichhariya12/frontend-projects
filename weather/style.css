@@ -1,0 +1,85 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient( 139deg,#0d0daf,#515076);
+}
+.weather-container{
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius:10px ;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    width: 350px;
+}
+.weather-container h1{
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/*center input field*/
+.container-feild{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    border: 1px solid #ccc;
+}
+/*input field style*/
+
+.container{
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgba(252,250,250,0.3);
+}
+/* Button styles */
+button {
+    background:none;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0; /* Rounded only on the right */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:0.3s;
+    
+}
+
+button:hover {
+    background: darkblue;
+}
+/* Icon inside button */
+button i {
+    font-size: 18px;
+}
+
+/* Style the "Go-To" button separately */
+.go-btn {
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 10px;
+}
