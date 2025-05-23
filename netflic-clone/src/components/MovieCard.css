@@ -1,0 +1,27 @@
+.movie-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+}
