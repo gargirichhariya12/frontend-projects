@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Orders</title>
+  
+   <style>
+    :root {
+  --color-primary: #0d6efd;
+  --color-warning: #ffc107;
+  --color-success: #198754;
+  --color-danger: #dc3545;
+  --color-purple: #6f42c1;
+  --color-light-purple: #e5d7ff;
+  --color-background: #f7f7f7;
+  --color-text-dark: #212529;
+  --color-text-muted: #555;
+  --color-white: #ffffff;
+  --shadow-md: 0 2px 5px rgba(0,0,0,0.1);
+  --shadow-lg: 0 4px 6px rgba(0,0,0,0.1);
+  --border-radius: 8px;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: var(--color-text-dark);
+  margin: 0 0 5px 0;
+}
+
+.header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Buttons */
+.btn-dashboard {
+  background-color: #d4a400; /* You can also replace with var(--color-warning) */
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  float: right;
+  margin-top: -60px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn-dashboard:hover {
+  background-color: #c29b00;
+}
+
+.action-btn {
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+  background: var(--color-white);
+  cursor: pointer;
+  margin-right: 5px;
+  transition: 0.2s;
+  gap: 5px ;
+}
+
+.action-btn.view { color: var(--color-text-dark); }
+.action-btn.edit { color: #f4b400; }
+
+/* Search Box Container */
+.search-container {
+  width: 100%;
+  padding: 15px 20px;
+  background: var(--color-white);
+  border-radius: 0.75rem; /* matches your card style */
+  box-shadow: var(--shadow-md);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Search Input */
+.search-box {
+  flex-grow: 1; /* takes full available width */
+  padding: 12px 16px;
+  background-color: #f8f9fa; /* light background for input */
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2); /* subtle focus glow */
+}
+
+
+/* Table */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-white);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+th {
+  background-color: #fafafa;
+  font-weight: bold;
+}
+
+/* Status Labels */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-ready { background: #dff9f6; color: #009688; }
+.status-test { background: #fff1e0; color: #f57c00; }
+.status-transit { background: #f3e5f5; color: #8e24aa; }
+.status-pending { background: #fff8e1; color: #fbc02d; }
+.status-approved { background: #e8f5e9; color: #2e7d32; }
+
+/* Disabled Badge */
+.disabled {
+  background: #fdecea;
+  color: var(--color-danger);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.icon {
+      width: 16px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+/* Progress Bar */
+.progress {
+  height: 8px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-warning);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  .btn-dashboard {
+    float: none;
+    margin-top: 10px;
+  }
+  table {
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>All Orders</h1>
+  <p>View and manage all orders in the system</p>
+  <button class="btn-dashboard">Back to Dashboard</button>
+
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="🔍 Search orders by ID, product, company, applicant, or status...">
+  </div>
+
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Product</th>
+        <th>Applicant</th>
+        <th>Company</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Progress</th>
+        <th>Re-edit</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>ORD-001</b></td>
+        <td>Amoxicillin Tablets 500mg</td>
+        <td>John Smith</td>
+        <td>PharmaCorp Industries</td>
+        <td><span class="status ready">💧 CRIA Ready</span></td>
+        <td>$2,500</td>
+        <td><div class="progress"><div class="progress-bar" style="width:90%"></div></div> 90%</td>
+        <td><span class="disabled">Disabled</span></td>
+        <td>
+          <button class="action-btn view">
+            <img src="eye.svg" class="icon" />View
+          </button>
+          <button class="action-btn edit">
+            <img src="edit.svg"  class="icon" /> Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td><b>ORD-002</b></td>
+        <td>Paracetamol Syrup 120mg/5ml</td>
+        <td>John Smith</td>
+        <td>PharmaCorp Industries</td>
+        <td><span class="status test">⚗ Under Test</span></td>
+        <td>$1,800</td>
+        <td><div class="progress"><div class="progress-bar" style="width:70%"></div></div> 70%</td>
+        <td><span class="disabled">Disabled</span></td>
+        
+        <td>
+          <button class="action-btn view">
+            <img src="eye.svg" class="icon" />View
+          </button>
+          <button class="action-btn edit">
+            <img src="edit.svg"  class="icon" /> Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td><b>ORD-003</b></td>
+        <td>Aspirin + Paracetamol Combi Pack</td>
+        <td>John Smith</td>
+        <td>PharmaCorp Industries</td>
+        <td><span class="status transit">📦 Sample in Transit</span></td>
+        <td>$3,200</td>
+        <td><div class="progress"><div class="progress-bar" style="width:40%"></div></div> 40%</td>
+        <td><span class="disabled">Disabled</span></td>
+       <td>
+          <button class="action-btn view">
+            <img src="eye.svg" class="icon" />View
+          </button>
+          <button class="action-btn edit">
+            <img src="edit.svg"  class="icon" /> Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td><b>ORD-004</b></td>
+        <td>Ibuprofen Tablets 400mg</td>
+        <td>Maria Garcia</td>
+        <td>MedLife Pharmaceuticals</td>
+        <td><span class="status pending">⏳ Pending Review</span></td>
+        <td>$2,100</td>
+        <td><div class="progress"><div class="progress-bar" style="width:15%"></div></div> 15%</td>
+        <td><span class="disabled">Disabled</span></td>
+        <td>
+          <button class="action-btn view">
+            <img src="eye.svg" class="icon" />View
+          </button>
+          <button class="action-btn edit">
+            <img src="edit.svg"  class="icon" /> Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td><b>ORD-005</b></td>
+        <td>Cephalexin Capsules 250mg</td>
+        <td>Chen Wei</td>
+        <td>Sino Medical Corp</td>
+        <td><span class="status approved">✅ Approved</span></td>
+        <td>$2,800</td>
+        <td><div class="progress"><div class="progress-bar" style="width:25%"></div></div> 25%</td>
+        <td><span class="disabled">Disabled</span></td>
+        <td>
+          <button class="action-btn view">
+            <img src="eye.svg" alt="View" class="icon" />View
+          </button>
+          <button class="action-btn edit">✏ Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+
+</body>
+
+</html>

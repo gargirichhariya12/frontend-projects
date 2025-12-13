@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Information Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f6f7fb;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      width: 90%;
+      height: fit-content;
+      max-width: 1000px;
+      background: white;
+      margin-top: 20px;  
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    
+    .sub-container h3{
+        margin-top: 20px;
+        color:#ce9300;
+    }
+    h3 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .card {
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    h4 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #fafafa;
+    }
+
+    .form-row {
+      display: flex;
+
+      gap: 20px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .upload-btn {
+      padding: 8px 16px;
+      background: #e8fff0;
+      color: #28a745;
+      border: 1px solid #28a745;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .upload-btn:hover {
+      background: #28a745;
+      color: white;
+      transition: 0.3s;
+    }
+    .sub-item{
+        border-left: solid 5px  #fbe413;
+        background: #f8f9fa;
+    }
+    .sub-item h4 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input {
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #fdfdfd;
+    }
+
+    .ingredients {
+      margin-top: 20px;
+    }
+
+    .ingredients input {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .documents {
+      margin-top: 25px;
+    }
+
+    .doc-grid {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .doc-box {
+      width: 100%;  
+      background: #f4f6f8;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      border: 2px dashed #e2e2e2;
+    }
+
+    .doc-title {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .status.uploaded {
+      color: #28a745;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <body>
+
+    <div class="main">
+
+        <div class="container">
+          <h3>Item Information</h3>
+    
+          <div class="card">
+            <h4>Item 1</h4>
+    
+            <form>
+              <div class="form-group">
+                <label>Product Name *</label>
+                <input type="text" value="Amoxicillin Tablets 500mg" />
+              </div>
+    
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Batch Number *</label>
+                  <input type="text" value="AMX-2024-001" disabled/>
+                </div>
+                <div class="form-group">
+                  <label>Manufacturing Date *</label>
+                  <input type="date" value="2024-01-15" disabled/>
+                </div>
+              </div>
+    
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date *</label>
+                  <input type="date" value="2027-01-15" disabled/>
+                </div>
+                <div class="form-group">
+                  <label>Sample Quantity *</label>
+                  <input type="text" value="100 tablets" />
+                </div>
+              </div>
+    
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Product Type *</label>
+                  <input type="text" value="Pharmaceuticals" disabled/>
+                </div>
+                <div class="form-group">
+                  <label>Dosage Form</label>
+                  <input type="text" value="Tablet" />
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <label>Manufacturer Type *</label>
+                <input type="text" value="We Manufactured" disabled/>
+              </div>
+    
+              <h4>Multi-Ingredient Details</h4>
+              <div class="form-group">
+                <input type="text" value="Ingredient 1: Amoxicillin Trihydrate" disabled/>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  value="Ingredient 2: Microcrystalline Cellulose"
+                />
+              </div>
+              <div class="form-group">
+                <input type="text" value="Ingredient 3: Magnesium Stearate"disabled />
+              </div>
+    
+              <h4>Required Documents</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>COA Document</label>
+                  <button class="upload-btn">Uploaded</button>
+                </div>
+                <div class="form-group">
+                  <label>MOA Document</label>
+                  <button class="upload-btn">Uploaded</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class=" sub-container">
+          <h3>COMBI PACK Sub-items</h3>
+    
+          <div class="sub-item container">
+            <h4>Sub-item 3.1</h4>
+    
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Product Name *</label>
+                <input type="text" value="Amoxicillin Injection 1g" disabled/>
+              </div>
+    
+              <div class="form-group">
+                <label>Manufacturing Date *</label>
+                <input type="text" value="17/01/2024"disabled />
+              </div>
+    
+              <div class="form-group">
+                <label>Batch Number *</label>
+                <input type="text" value="AMX-INJ-001"disabled />
+              </div>
+    
+              <div class="form-group">
+                <label>Expiry Date *</label>
+                <input type="text" value="17/01/2027" disabled/>
+              </div>
+    
+              <div class="form-group">
+                <label>Who Manufactured *</label>
+                <input type="text" value="We Manufactured" disabled/>
+              </div>
+    
+              <div class="form-group">
+                <label>Sample Quantity *</label>
+                <input type="text" value="10 vials" disabled/>
+              </div>
+            </div>
+    
+            <div class="ingredients">
+              <label>Ingredients</label>
+              <input type="text" value="Ingredient 1: Amoxicillin Sodium" disabled/>
+              <input type="text" value="Ingredient 2: Sodium Chloride" disabled/>
+              <input type="text" value="Ingredient 3: Water for Injection" disabled/>
+            </div>
+    
+            <div class="documents">
+              <label>Required Documents</label>
+              <div class="doc-grid">
+                <div class="doc-box">
+                  <span class="doc-title">📄 COA</span>
+                  <span class="status uploaded">Uploaded</span>
+                </div>
+                <div class="doc-box">
+                  <span class="doc-title">📄 MOA</span>
+                  <span class="status uploaded">Uploaded</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

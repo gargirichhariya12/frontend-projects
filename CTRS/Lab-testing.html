@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    .font{
+        font-size: 12px;
+    }
+  </style>
+  <body class="bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="p-1">
+          <button class="btn bg-warning ">
+            <i class="bi bi-arrow-left"></i> Back to order
+          </button>
+          <h2 class="mt-3">Lab Testing - ORD-240118-003</h2>
+          <spam class="text-secondary"
+            >Priya Patel • Bharat Pharmaceuticals</spam
+          >
+        </div>
+        <div class="py-4">
+          <button class="btn border-1">Save Draft</button>
+          <button class="btn bg-warning ">submit Tests</button>
+        </div>
+      </div>
+       <div class="border rounded-3 bg-white shadow-sm">
+        <div class=" p-4">
+
+            <h5 class="fw-semibold mb-3 text-gray">Items Testing Overview</h5>
+            <p class="text-gray small mb-4">Expand COMBI PACK items to view sub-items. Add tests for each item individually.</p>
+        </div>
+        <div class="px-4">
+
+            <table class="table  align-middle font">
+              <thead class="table-light">
+                <tr class="text-gray">
+                  <th>Serial No.</th>
+                  <th>Units</th>
+                  <th>Product Name</th>
+                  <th>Batch No.</th>
+                  <th>Dosage Form</th>
+                  <th>Manufacturer</th>
+                  <th>Mfg Date</th>
+                  <th>Exp Date</th>
+                  <th>Sample Qty</th>
+                  <th>Ingredients</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-gray">
+                  <td>1</td>
+                  <td>200</td>
+                  <td>Amoxicillin Syrup</td>
+                  <td>AMX2024003</td>
+                  <td><span class="badge bg-light text-black border">Syrup</span></td>
+                  <td>Bharat Pharmaceuticals</td>
+                  <td>12/01/2024</td>
+                  <td>12/01/2025</td>
+                  <td>200ml bottle</td>
+                  <td>Amoxicillin 250mg/5ml, Sucrose, Strawberry Flavor</td>
+                  <!--the action button will add on the task/action-->
+                  <td><button class="btn btn-success btn-sm">+ Add Test</button></td>
+                </tr>
+                <tr class="bg-light">
+                  <td colspan="11" class="text-gray bg-primary-subtle">
+                    <strong>Test 1:</strong> Assay – Sample showed 98.5% purity within acceptable range of 95–105%.  
+                    Method used: HPLC analysis.  
+                    <select class="form-select form-select-sm w-auto d-inline-block ms-2">
+                      <option>Pass</option>
+                      <option>Fail</option>
+                    </select>
+                    <span class="badge bg-light text-black border ms-2">Within acceptable</span>
+                    <button class="btn btn-outline-danger btn-sm ms-2"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Lab Report Attachments -->
+    <div class="border rounded-3 p-4 bg-white shadow-sm mt-4">
+      <h6 class="fw-semibold text-gray">Lab Report Attachments</h6>
+      <div class="border border-2 border-dashed rounded-3 p-4 text-center mt-3">
+        <p class="text-gray mb-2">Upload report</p>
+        <input type="file" class="form-control w-auto mx-auto mb-2">
+        <!--this will appere when the user will uploade the file -->
+        <span class="text-success small">📎 Gargi-Richha.pdf</span>
+      </div>
+    </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

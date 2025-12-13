@@ -26,7 +26,7 @@ listContainer.addEventListener("click",function(e){
         saveData();
     }
 },false);
-//creating a function so that when ever we reached to a browser our list should be as it  is 
+//creating a function so that when ever we reached to a browser our list should be as it  is
 
 function saveData(){
     localStorage.setItem("data",listContainer.innerHTML);

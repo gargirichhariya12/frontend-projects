@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    .purple-500 {
+      color: oklch(0.69 0.21 307.52);
+    }
+    .btn-purple {
+      background-color: oklch(0.438 0.218 303.724);
+    }
+  </style>
+  <body class="bg-light">
+    <div class="container">
+      <!-- Header Section -->
+      <div class="mb-4 mt-4 d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mt-4">Sample Tracking</h1>
+          <p class="text-secondary">
+            Track sample collection from manufacturers
+          </p>
+        </div>
+        <div class="">
+          <button class="btn btn-warning">Back to Dashboard</button>
+        </div>
+      </div>
+      <!-- Cards Section -->
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="d-flex justify-content-between">
+              <div class="p-3">
+                <p class="text-secondary mb-0">Assigned</p>
+                <h5 class="fw-semibold">1</h5>
+              </div>
+              <div class="text-primary p-4">
+                <i class="bi bi-box icon-box fs-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="d-flex justify-content-between">
+              <div class="p-3">
+                <p class="text-secondary mb-0">Ready for Lab</p>
+                <h5 class="fw-semibold">1</h5>
+              </div>
+              <div class="text-success p-4">
+                <i class="bi bi-check2-circle fs-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="d-flex justify-content-between">
+              <div class="p-3">
+                <p class="text-secondary mb-0">Lab Pickup</p>
+                <h5 class="fw-semibold">1</h5>
+              </div>
+              <div class="purple-500 p-4">
+                <i class="bi bi-flask fs-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="d-flex justify-content-between">
+              <div class="p-3">
+                <p class="text-secondary mb-0">Sent Back</p>
+                <h5 class="fw-semibold">1</h5>
+              </div>
+              <div class="text-danger p-4">
+                <i class="bi bi-arrow-left fs-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Detailed Cards Section -->
+      <div class="container bg-white border rounded-3 p-4 mt-4">
+        <div class="">
+          <p class="mb-0">Sample Orders (4)</p>
+        </div>
+        <!--1st card-->
+        <div class="container border rounded-3 mt-3">
+          <div class="d-flex justify-content-between mt-2">
+            <div class="p-3">
+              <div class="d-flex">
+                <h5 class="fw-semibold">ORD-240120-001</h5>
+                <span
+                  class="badge bg-primary-subtle text-primary ms-2 align-self-center"
+                  >Assigned</span
+                >
+              </div>
+              <p class="text-secondary mb-0">
+                John Smith • PharmaCorp Industries.
+              </p>
+              <p class="text-secondary mb-0">
+                Excepted Batches <span class="text-black">3</span>
+              </p>
+            </div>
+            <div class="p-4 py-5">
+              <button class="btn btn-warning">Record Collection</button>
+            </div>
+          </div>
+        </div>
+
+        <!--2nd card-->
+        <div class="container border rounded-3 mt-3 p-3 bg-white">
+          <!-- Header Row -->
+          <div
+            class="d-flex justify-content-between align-items-start flex-wrap"
+          >
+            <div class="col-9">
+              <div class="d-flex flex-wrap align-items-center mb-1">
+                <h5 class="fw-semibold mb-0 me-2">ORD-240119-002</h5>
+                <span class="badge bg-danger-subtle text-danger me-2"
+                  >Sent Back to Manufacturer</span
+                >
+                <span class="badge bg-warning-subtle text-warning"
+                  >Batch Mismatch</span
+                >
+              </div>
+
+              <p class="text-secondary mb-1">
+                Maria Garcia • ExportMed Solutions
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p class="text-secondary mb-0 col-3">
+                  Expected Batches: <span class="text-black">2</span>
+                </p>
+                <p class="text-secondary mb-0 col-3">
+                  Actual Batches: <span class="text-black">1</span>
+                </p>
+                <p class="text-secondary mb-0 col-3">
+                  Collected: <span class="text-black">22/01/2024</span>
+                </p>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> COA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> MOA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+              </div>
+              <div class="alert alert-warning mt-3 py-2 mb-2 border-0">
+                Remarks: Only received 1 batch instead of expected 2.
+              </div>
+
+              <!-- Sent Back Notice -->
+              <div class="alert alert-danger py-2 mb-0 border-0">
+                Sent Back: Incomplete sample — missing 1 batch. Cannot proceed
+                with testing.
+              </div>
+            </div>
+
+            <!-- Right Button -->
+            <div class="align-self-center">
+              <button class="btn bg-danger fw-semibold text-white">
+                Returned to Manufacturer
+              </button>
+            </div>
+          </div>
+
+          <!-- Remarks -->
+        </div>
+
+        <!--3rd card-->
+        <div class="container border rounded-3 mt-3 p-3 bg-white">
+          <!-- Header Row -->
+          <div
+            class="d-flex justify-content-between align-items-start flex-wrap"
+          >
+            <div class="col-10">
+              <div class="d-flex flex-wrap align-items-center mb-1">
+                <h5 class="fw-semibold mb-0 me-2">ORD-240119-002</h5>
+                <span class="badge purple-500 me-2">Pick up by Lab</span>
+              </div>
+
+              <p class="text-secondary mb-1">
+                Priya Patel • Bharat Pharmaceuticals
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p class="text-secondary mb-0 col-2">
+                  Expected Batches: <span class="text-black">2</span>
+                </p>
+                <p class="text-secondary mb-0 col-2">
+                  Actual Batches: <span class="text-black">1</span>
+                </p>
+                <p class="text-secondary mb-0 col-2">
+                  Collected: <span class="text-black">22/01/2024</span>
+                </p>
+                <p class="text-secondary mb-0 col-2">
+                  Lab Pickup: <span class="text-black">23/01/2024</span>
+                </p>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> COA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> MOA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Button -->
+            <div class="align-self-center">
+              <button class="btn btn-purple fw-semibold text-white">
+                Picked up by Lab
+              </button>
+            </div>
+          </div>
+
+          <!-- Remarks -->
+        </div>
+        <!--4th card-->
+        <div class="container border rounded-3 mt-3 p-3 bg-white">
+          <!-- Header Row -->
+          <div
+            class="d-flex justify-content-between align-items-start flex-wrap"
+          >
+            <div class="col-10">
+              <div class="d-flex flex-wrap align-items-center mb-1">
+                <h5 class="fw-semibold mb-0 me-2">ORD-240117-004</h5>
+                <span class="badge bg-success-subtle text-success me-2"
+                  >Ready for lab</span
+                >
+              </div>
+
+              <p class="text-secondary mb-1">
+                Priya Patel • Bharat Pharmaceuticals
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p class="text-secondary mb-0 col-3">
+                  Expected Batches: <span class="text-black">2</span>
+                </p>
+                <p class="text-secondary mb-0 col-3">
+                  Actual Batches: <span class="text-black">1</span>
+                </p>
+                <p class="text-secondary mb-0 col-3">
+                  Collected: <span class="text-black">22/01/2024</span>
+                </p>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> COA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+                <p>
+                  <i class="bi bi-file-earmark-text"></i> MOA:
+                  <i class="bi bi-file-check-fill text-success"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Button -->
+            <div class="align-self-center">
+              <button class="btn btn-success fw-semibold text-white">
+                <i class="bi bi-flask"></i> lab Pickup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

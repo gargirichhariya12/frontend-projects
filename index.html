@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 100%;
+      margin: auto;
+      
+    }
+
+    .card h3 {
+      margin: 0 0 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .item-box {
+      border-left: 4px solid #ffc107;
+      padding-left: 15px;
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .item-header i {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .item-header span {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .tag {
+      background: #e0e0e0;
+      color: #333;
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 14px;
+      margin-bottom: 10px;
+      max-width: 95%;
+      color: #666;
+    }
+
+    .details p {
+      margin: 6px 0;
+    }
+
+    .details strong {
+      font-weight: bold;
+    }
+
+    .docs {
+      font-size: 14px;
+    }
+
+    .doc-tag {
+      display: inline-block;
+      background: #c8f7c5;
+      color: #0a7a0a;
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin-left: 5px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Items Summary (1 item)</h3>
+    <div class="item-box">
+      <div class="item-header">
+        
+        <span>Item 1: Name</span>
+        <span class="tag">Pharmaceuticals</span>
+      </div>
+      <div class="details">
+        <p>Batch: 23648</p>
+        <p>Form: Tablets</p>
+        <p>Quantity: 123</p>
+        <p>Manufacturer: External</p>
+      </div>
+      <div class="docs">
+      Required Documents:
+        <span class="doc-tag">COA ✓</span>
+        <span class="doc-tag">MOA ✓</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

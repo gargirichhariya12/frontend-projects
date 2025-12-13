@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    .font {
+      font-size: 12px;
+    }
+    
+  </style>
+  <body class="bg-secondary-subtle">
+    <div class="container">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <h2 class="fw-normal">Pending Reports</h2>
+          <p class="font">
+            Monitor lab assignments, testing progress and reports under
+            development
+          </p>
+        </div>
+        <div class="py-3">
+          <button class="btn btn-warning rounded-3">Back to Dashboard</button>
+        </div>
+      </div>
+
+      <div
+        class="d-flex align-items-center bg-white border rounded-3 p-4 gap-2"
+      >
+        <!-- Search Bar -->
+        <div class="input-group">
+          <span class="input-group-text bg-secondary-subtle border-0 font">
+            <i class="bi bi-search text-secondary"></i>
+          </span>
+          <input
+            type="text"
+            class="form-control border-0 bg-secondary-subtle font"
+            placeholder="Search by order ID, applicant, company, or lab..."
+          />
+        </div>
+
+        <!-- Status Dropdown -->
+        <select class="form-select w-auto bg-secondary-subtle border-0 font">
+          <option selected>All Status</option>
+          <option>Pending</option>
+          <option>Approved</option>
+          <option>Rejected</option>
+        </select>
+
+        <!-- Sort Dropdown -->
+        <select class="form-select w-auto bg-secondary-subtle border-0 font">
+          <option selected>Newest First</option>
+          <option>Oldest First</option>
+        </select>
+      </div>
+
+      <!--table-->
+      <div class="card shadow-sm border-0 mt-4">
+        <div class="card-body">
+          <h5 class="card-title mb-4">Pending Reports (4)</h5>
+
+          <div class="table-responsive">
+            <table class="table align-middle rounded-3">
+              <thead class="table-light">
+                <tr class="font">
+                  <th>Report Details</th>
+                  <th>Applicant</th>
+                  <th>Laboratory</th>
+                  <th>Dates</th>
+                  <th>Progress</th>
+                  <th>Test Results</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- Report Details -->
+                  <td class="font">
+                    <div class="fw-semibold">ORD-240118-003</div>
+                    <small class="text-muted">1 item(s)</small>
+                    <div>
+                      <span class="badge bg-danger-subtle text-danger mt-1">
+                        <i class="bi bi-exclamation-triangle me-1"></i> Overdue
+                      </span>
+                    </div>
+                  </td>
+
+                  <!-- Applicant -->
+                  <td class="font">
+                    <div class="fw-semibold">Priya Patel</div>
+                    <small class="text-muted">Bharat Pharmaceuticals</small>
+                  </td>
+
+                  <!-- Laboratory -->
+                  <td class="font">
+                    <div class="fw-semibold">Central Testing Laboratory</div>
+                    <small class="text-muted">Collector: Dr. Raj Patel</small>
+                  </td>
+
+                  <!-- Dates -->
+                  <td class="small text-muted font">
+                    Assigned: <span class="text-body">21/01/2024</span><br />
+                    Pickup: <span class="text-body">23/01/2024</span><br />
+                    Received: <span class="text-body">23/01/2024</span><br />
+                    Due: <span class="text-danger fw-semibold">05/02/2024</span>
+                  </td>
+
+                  <!-- Progress -->
+                  <td class="small font">
+                    2/4 tests <span class="text-muted">50%</span>
+                    <div class="progress mt-1" style="height: 6px">
+                      <div
+                        class="progress-bar bg-warning"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                  </td>
+
+                  <!-- Test Results -->
+                  <td class="small font">
+                    <div class="text-success">
+                      <i class="bi bi-check-circle"></i> 2 passed
+                    </div>
+                    <div class="text-secondary">
+                      <i class="bi bi-circle"></i> 2 pending
+                    </div>
+                  </td>
+
+                  <!-- Status -->
+                  <td class="font">
+                    <span
+                      class="badge rounded-pill  purple "
+                    >
+                      Testing in Progress
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="font">
+                    <button class="btn btn-outline-secondary btn-sm me-1">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button class="btn btn-outline-warning btn-sm">
+                      <i class="bi bi-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

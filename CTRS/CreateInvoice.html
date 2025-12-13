@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Invoice</title>
+    <script
+      src="https://kit.fontawesome.com/b9c979a38c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        font-family: "Segoe UI", Arial, sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f7f8fa;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 0;
+        color: #111;
+      }
+
+      .container {
+        width:90%;
+        margin: 0 30px 30px;
+      }
+      .btn {
+        width: 200px;
+      }
+      .save{
+        padding: 10px 20px;
+        background-color: #dce22e;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        color: #333;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.5s;
+      }
+
+      .back-btn:hover {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .header {
+        margin: 20px 0;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #111;
+      }
+
+      .header p {
+        color: #666;
+        margin-top: 4px;
+      }
+
+      .form-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: #fff;
+        padding: 20px 24px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h3 {
+        margin-bottom: 16px;
+        font-size: 18px;
+        color: #111;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+      }
+
+      .form-left {
+        gap: 20px;
+        flex-direction: row;
+      }
+
+      .left-leble {
+        width: 100%;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 6px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #f5f5f7;
+        font-size: 14px;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+      }
+
+      .checkbox input {
+        margin-right: 8px;
+      }
+
+      .textarea-group textarea {
+        width: 100%;
+        height: 60px;
+      }
+
+      /* --- Invoice Items Section --- */
+
+      .invoice-container {
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+        margin-top: 30px;
+      }
+
+      .invoice-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .item-box {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-top: 20px;
+        padding: 16px;
+        background-color: #fefefe;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .item-header h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .description-section {
+        margin-top: 12px;
+      }
+
+      .description-section p {
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .description-box {
+        background-color: #f4f4f6;
+        border-radius: 6px;
+        padding: 10px;
+      }
+
+      .flex-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .flex-column {
+        flex: 1;
+      }
+
+      .flex-column p {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      .input-box {
+        background-color: #f4f4f6;
+        border-radius: 6px;
+        padding: 10px;
+      }
+      /* --- Pricing Summary --- */
+      .pricing-summary {
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+        margin-top: 30px;
+        border: 1px solid #e5e7eb;
+      }
+
+      .pricing-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        color: #111;
+        margin-bottom: 16px;
+      }
+
+      .pricing-header i {
+        color: #111;
+      }
+
+      .pricing-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0;
+        font-size: 15px;
+      }
+
+      .discount span:first-child {
+        color: #16a34a;
+      }
+
+      .discount span:last-child {
+        color: #16a34a;
+        font-weight: 500;
+      }
+
+      .total {
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 16px;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+      }
+
+      .prepaid {
+        display: flex;
+        align-items: center;
+        margin-top: 14px;
+        gap: 8px;
+      }
+
+      .prepaid input {
+        transform: scale(1.2);
+      }
+
+      /* --- Email Settings Section --- */
+.email-settings {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  border: 1px solid #e5e7eb;
+}
+
+.email-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #111;
+}
+
+.email-subtext {
+  color: #666;
+  margin: 6px 0 20px;
+  font-size: 14px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.email-form label {
+  font-weight: 500;
+  color: #333;
+  margin-top: 8px;
+}
+
+.email-form input,
+.email-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f5f5f7;
+  font-size: 14px;
+}
+
+.email-form textarea {
+  font-family: "Segoe UI", Arial, sans-serif;
+  resize: vertical;
+}
+
+.attachment {
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-info i {
+  color: #dc2626;
+  font-size: 20px;
+}
+
+.filename {
+  margin: 0;
+  font-weight: 600;
+}
+
+.file-details {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+
+
+
+
+
+      @media (max-width: 768px) {
+        .form-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .flex-row,
+        .form-left {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="#" class="back-btn btn"
+        ><i class="fa-solid fa-arrow-left"></i> Back to List</a
+      >
+
+      <div class="header">
+        <h1>Create Invoice</h1>
+        <p>Create a new invoice for an order</p>
+      </div>
+
+      <div class="form-wrapper">
+        <!-- Left Card -->
+        <div class="card">
+          <h3>Invoice Details</h3>
+          <div class="form-group form-left">
+            <div class="left-leble">
+              <label>Invoice Number</label>
+              <input type="text" value="01247" />
+            </div>
+            <div class="left-leble">
+              <label>Order Number *</label>
+              <select>
+                <option>Order #1001 - RAMSA HEALTHCARE</option>
+                <option>Order #387 - EVEREST HEALTHCARE</option>
+                <option>Order #389 - PHARMA SOLUTIONS LTD</option>
+                <option>Order #1002 - GLOBAL PHARMA INC</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group form-left">
+            <div class="left-leble">
+              <label>Date</label>
+              <input type="date" value="2025-10-08" />
+            </div>
+            <div class="left-leble">
+              <label>Currency & Bank Account</label>
+              <select>
+                <option>WIO Bank PJSC (USD)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="supplementary" />
+            <label for="supplementary">This is a Supplementary Invoice</label>
+          </div>
+        </div>
+
+        <!-- Right Card -->
+        <div class="card">
+          <h3>Customer Information</h3>
+          <div class="form-group">
+            <label>Customer Name</label>
+            <input type="text" placeholder="e.g., RAMSA HEALTHCARE" />
+          </div>
+
+          <div class="form-group textarea-group">
+            <label>Customer Address</label>
+            <textarea placeholder="Enter full address"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Customer Email</label>
+            <input type="email" placeholder="customer@example.com" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Invoice Items Section -->
+      <div class="invoice-container">
+        <div class="invoice-header">
+          <h2>Invoice Items</h2>
+          <button class="back-btn">+ Add Item</button>
+        </div>
+
+        <div class="item-box">
+          <div class="item-header">
+            <h3>Item #1</h3>
+            <button class="back-btn">Remove</button>
+          </div>
+
+          <div class="description-section">
+            <p>Description</p>
+            <div class="description-box">
+              Clean report Inspection and Analysis Fee only
+            </div>
+          </div>
+
+          <div class="flex-row">
+            <div class="flex-column">
+              <p>Quantity</p>
+              <div class="input-box">15</div>
+            </div>
+            <div class="flex-column">
+              <p>Unit Price (USD)</p>
+              <div class="input-box">550</div>
+            </div>
+            <div class="flex-column">
+              <p>Amount (USD)</p>
+              <div class="input-box">8250.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing Summary Section -->
+      <div class="pricing-summary">
+        <div class="pricing-header">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <h2>Pricing Summary</h2>
+        </div>
+
+        <div class="pricing-row">
+          <span>Subtotal:</span>
+          <span>$8250.00 USD</span>
+        </div>
+
+        <div class="pricing-row discount">
+          <span
+            ><i class="fa-solid fa-circle-check"></i> Discount (Auto-applied for
+            15 items):</span
+          >
+          <span>-$825.00 USD</span>
+        </div>
+
+        <div class="pricing-row total">
+          <span>Total Due:</span>
+          <span>$7425.00 USD</span>
+        </div>
+
+        <div class="prepaid">
+          <input type="checkbox" id="prepaid" />
+          <label for="prepaid">Customer has prepaid balance</label>
+        </div>
+      </div>
+
+      <!-- Email Settings Section -->
+      <div class="email-settings">
+        <div class="email-header">
+          <i class="fa-solid fa-envelope"></i>
+          <h2>Email Settings</h2>
+        </div>
+        <p class="email-subtext">
+          Configure email details before sending the invoice
+        </p>
+
+        <div class="email-form">
+          <label>To</label>
+          <input type="email" value="procurement@globalpharma.com" />
+
+          <label>CC</label>
+          <input type="email" value="issa@ctrsgrp.com" />
+          <input type="email" value="ahassan@ctrsgrp.com" />
+          <input type="email" value="fabdiarashid@ctrsgrp.com" />
+
+          <label>Subject</label>
+          <input
+            type="text"
+            value="CTRS #INV 00223 - ORDER 1002 - 11 Aug 2025"
+          />
+
+          <label>Email Body</label>
+          <textarea rows="8">
+Dear RAMSA HEALTHCARE,
+
+I hope this message finds you well. Please find attached the invoice for your review and records. We kindly request you to examine the details at your earliest convenience.
+
+Thank you for your attention to this matter.
+
+Kind regards
+
+--
+M. Adam
+E: accounts@ctrsgrp.com | https://ctrsgrp.com/
+    </textarea
+          >
+
+          <label>Attachment Preview</label>
+          <div class="attachment">
+            <div class="file-info">
+              <i class="fa-solid fa-file-pdf"></i>
+              <div>
+                <p class="filename">Invoice_00223.pdf</p>
+                <p class="file-details">
+                  Ready to generate - 1 item(s), Total: 7425.00 USD
+                </p>
+              </div>
+            </div>
+            <button class="back-btn">
+              <i class="fa-regular fa-eye"></i> Preview PDF
+            </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+        <button class ="save">Save Changes</button>
+        <button class ="back-btn">Preview</button>
+        <button class ="back-btn">Cancel</button>
+      
+    </div>
+  </body>
+</html>

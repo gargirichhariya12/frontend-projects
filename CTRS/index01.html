@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assign Laboratory</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b9c979a38c.js" crossorigin="anonymous"></script>
+  <style>
+    .lab-card {
+      border-left: 4px solid #28a745;
+      background-color: #e8f5e9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .dropdown-item small {
+      display: block;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <div class="container" style="max-width: 600px;">
+    <h5><i class="fa-solid fa-flask me-2"></i>Assign Laboratory</h5>
+
+    <div class="mt-3">
+      <label for="labSelect" class="form-label fw-semibold">Select Laboratory <span class="text-danger">*</span></label>
+      <select id="labSelect" class="form-select">
+        <option selected disabled>Choose a laboratory</option>
+        <option value="quality">QualityLab Testing Services</option>
+        <option value="analytics">Advanced Analytics Laboratory</option>
+        <option value="precision">Precision Testing Center</option>
+      </select>
+    </div>
+
+    <!-- Lab Info Card -->
+    <div id="labInfo" class="lab-card d-none">
+      <h6 id="labName" class="fw-bold mb-1"></h6>
+      <p id="labLocation" class="mb-1"><i class="fa-solid fa-location-dot me-2"></i></p>
+      <p id="labSpecialization" class="mb-1"><i class="fa-solid fa-vials me-2"></i></p>
+      <p id="labLoad" class="mb-1"><i class="fa-solid fa-chart-bar me-2"></i></p>
+      <p id="labProcessing" class="mb-0"><i class="fa-solid fa-hourglass-half me-2"></i></p>
+    </div>
+  </div>
+
+  <script>
+    const labSelect = document.getElementById('labSelect');
+    const labInfo = document.getElementById('labInfo');
+    const labName = document.getElementById('labName');
+    const labLocation = document.getElementById('labLocation');
+    const labSpecialization = document.getElementById('labSpecialization');
+    const labLoad = document.getElementById('labLoad');
+    const labProcessing = document.getElementById('labProcessing');
+
+    const labs = {
+      quality: {
+        name: 'QualityLab Testing Services',
+        location: 'Dubai Science Park',
+        specialization: 'Specializations: Pharmaceutical Testing, Chemical Analysis',
+        load: 'Current load: 32/50 capacity',
+        processing: 'Avg processing: 3–5 days'
+      },
+      analytics: {
+        name: 'Advanced Analytics Laboratory',
+        location: 'Abu Dhabi Global Hub',
+        specialization: 'Specializations: Environmental Testing, Data Analytics',
+        load: 'Current load: 18/30 capacity',
+        processing: 'Avg processing: 2–4 days'
+      },
+      precision: {
+        name: 'Precision Testing Center',
+        location: 'Sharjah Research Park',
+        specialization: 'Specializations: Material Testing, Structural Analysis',
+        load: 'Current load: 35/40 capacity',
+        processing: 'Avg processing: 4–6 days'
+      }
+    };
+
+    labSelect.addEventListener('change', () => {
+      const selected = labs[labSelect.value];
+      if (selected) {
+        labName.textContent = selected.name;
+        labLocation.innerHTML = `<i class="fa-solid fa-location-dot me-2"></i>${selected.location}`;
+        labSpecialization.innerHTML = `<i class="fa-solid fa-vials me-2"></i>${selected.specialization}`;
+        labLoad.innerHTML = `<i class="fa-solid fa-chart-bar me-2"></i>${selected.load}`;
+        labProcessing.innerHTML = `<i class="fa-solid fa-hourglass-half me-2"></i>${selected.processing}`;
+        labInfo.classList.remove('d-none');
+      }
+    });
+  </script>
+
+</body>
+</html>

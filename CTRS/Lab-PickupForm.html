@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="m-3 container">
+      <div class="">
+        <button class="btn btn-outline-secondary mb-2 border-1 rounded-2">
+          <i class="bi bi-arrow-left"></i> Back to Orders
+        </button>
+        <h2 class="fw-semibold mb-1">Lab Pickup Form</h2>
+        <span class="text-muted">
+          Record when lab picked up sample for <strong>ORD-240117-004</strong>
+        </span>
+      </div>
+
+      <div class="card mt-3 col-lg-6 col-md-8 rounded-2">
+        <div class="p-4">
+          <h5>Order: ORD-240117-004</h5>
+          <spam class="text-muted"
+            >David Johnson • Canadian Pharmaceuticals</spam
+          >
+        </div>
+        <div class="card-body p-4 bg-light m-4">
+          <h6 class="fw-bold">Sample Collection Summary</h6>
+          <div class="d-flex">
+            <div class="w-50">
+              <p>Expected Batches: 1</p>
+              <p>COA: <i class="bi bi-file-check-fill text-success"></i></p>
+              <p>Collected: 20/01/2024</p>
+            </div>
+            <div class="w-50">
+              <p>Actual Batches: 1</p>
+              <p>MOA: <i class="bi bi-file-check-fill text-success"></i></p>
+            </div>
+          </div>
+        </div>
+        <div class="p-4">
+          <label for="collectionDate" class="form-label fw-semibold"
+            >Lab Pickup Date <span class="text-danger">*</span></label
+          >
+          
+          <input
+            type="text"
+            id="collectionDate"
+            class="form-control bg-light"
+            placeholder="16-10-25"
+          /><i class="bi bi-arrow-left"></i>
+          <div class ="d-flex mt-3">
+            <button class="btn btn-warning"><i class="bi bi-flask"></i> Confirm Lab Pickup</button>
+            <button class="btn btn-outline-secondary ms-2">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

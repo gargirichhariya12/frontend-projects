@@ -3,7 +3,7 @@ const messageInput = document.querySelector(".message-input");
 const sendMessageButton = document.querySelector("#send-message");
 //API key and Url construction
 const API_KEY ="AIzaSyAt6RzqZFt7q5alp4XLPa5EVF5XmQrg86A";
-const API_URL =`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const API_URL =`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 const userData ={
     message:null,
@@ -21,7 +21,7 @@ const createMessageElement=(content , ...classes) =>{
     return div;
 }
 
-//generate bot response using API 
+//generate bot response using API
 const generateBotResponse = async (incomingMessageDiv) => {
     const messageElement = incomingMessageDiv.querySelector(".message-text");
 

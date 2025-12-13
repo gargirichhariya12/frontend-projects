@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    .font {
+      font-size: 12px;
+    }
+    .purple {
+      color: oklch(0.438 0.218 303.724);
+      background-color: oklch(82.244% 0.07362 306.56);
+    }
+  </style>
+  <body class="bg-secondary-subtle">
+    <div class="container">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <h2 class="fw-normal">Completed Reports</h2>
+          <p class="font">
+            View completed lab reports and generate CRIA certificates
+          </p>
+        </div>
+        <div class="py-3">
+          <button class="btn btn-warning rounded-3">Back to Dashboard</button>
+        </div>
+      </div>
+
+      <div
+        class="d-flex align-items-center bg-white border rounded-3 p-4 gap-2"
+      >
+        <!-- Search Bar -->
+        <div class="input-group">
+          <span class="input-group-text bg-secondary-subtle border-0 font">
+            <i class="bi bi-search text-secondary"></i>
+          </span>
+          <input
+            type="text"
+            class="form-control border-0 bg-secondary-subtle font"
+            placeholder="Search by order ID, applicant, company, or lab..."
+          />
+        </div>
+
+        <!-- Status Dropdown -->
+
+        <select class="form-select w-auto bg-secondary-subtle border-0 font">
+          <option selected>All Status</option>
+          <option>Pending</option>
+          <option>Approved</option>
+          <option>Rejected</option>
+        </select>
+
+        <!-- Sort Dropdown -->
+        <select class="form-select w-auto bg-secondary-subtle border-0 font">
+          <option selected>Newest First</option>
+          <option>Oldest First</option>
+        </select>
+      </div>
+
+      <!--table-->
+      <div class="card shadow-sm rounded-3  mt-2">
+        <div class="card-body">
+          <h5 class="fw-semibold mb-4">Completed Reports (3)</h5>
+
+          <div class="table-responsive">
+            <table class="table align-middle border  rounded-3">
+              <thead class="table-light">
+                <tr>
+                  <th>Report Details</th>
+                  <th>Applicant</th>
+                  <th>Laboratory</th>
+                  <th>Completion Date</th>
+                  <th>Test Results</th>
+                  <th>Processing</th>
+                  <th>Overall Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>ORD-240112-003</strong><br />
+                    <small>1 item(s) • 4 tests</small>
+                  </td>
+                  <td>
+                    <strong>Maria Santos</strong><br />
+                    <small>Global Pharma Ltd</small>
+                  </td>
+                  <td><i class="bi bi-building"></i> Quality Control Lab</td>
+                  <td>
+                    30/01/2024<br />
+                    <small>13 days processing</small>
+                  </td>
+                  <td>
+                    <span class="text-success">● 0 passed</span><br />
+                    <span class="text-danger">● 4 failed</span><br />
+                    <small>0% pass rate</small>
+                  </td>
+                  <td>
+                    13 days<br />
+                    <small>Received: 17/01/2024</small>
+                  </td>
+                  <td>
+                    <span
+                      class="badge bg-danger-subtle text-danger "
+                    >
+                      All Tests Failed
+                    </span>
+                  </td>
+
+                  <!--Other options -->
+
+                  <!-- for mix results <td>
+                    <span
+                      class="badge bg-warning-subtle text-warning"
+                    >
+                      Mixed Results
+                    </span>
+                  </td> -->
+                  <!--All Passed-->
+                  <!-- <td>
+                    <span
+                      class="badge bg-success-subtle text-success "
+                    >
+                      All Tests Passed
+                    </span>-->
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-light border">
+                        <i class="bi bi-eye fs-5"></i>
+                      </button>
+                      <button class="btn btn-warning fw-semibold"> <i class="bi bi-file-earmark-bar-graph fs-5"></i> CRIA</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

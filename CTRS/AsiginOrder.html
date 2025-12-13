@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <style>
+    .lab-card {
+      border-left: 4px solid #28a745;
+      background-color: #e8f5e9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .dropdown-item small {
+      display: block;
+      color: #6c757d;
+    }
+    body {
+      background-color: #f8fafc;
+    }
+    .order-card {
+      flex: 1;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      min-width: 360px;
+    }
+    .order-card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert {
+      font-size: 0.9rem;
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .lab-card {
+      background-color: #eaf9ef;
+      border-radius: 10px;
+      padding: 12px 15px;
+      border: 1px solid #d0ebda;
+    }
+    .form-select,
+    .form-control {
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+  <body>
+
+    <body class="bg-light py-5">
+
+  <div class="container mt-4 border  rounded-4 p-4 bg-white">
+    <div class="order-card">
+      <h5 class="mb-4 fw-semibold">Order Information</h5>
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-8">
+          <div class="mb-3">
+            <h6 class="section-title">Customer</h6>
+            <p class="fw-bold mb-1">RAMSA HEALTHCARE</p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="section-title">Address</h6>
+            <p class="mb-0">
+              D 107 SUMEL 11 INDIAN TEXTILE PLAZA NEAR NAMASTE CIRCLE SHAHIHAUG AHMEDABAD 380004<br>
+              GUJARAT, INDIA
+            </p>
+          </div>
+
+          <div>
+            <h6 class="section-title">Contact</h6>
+            <p class="mb-0">ramsaexport@gmail.com</p>
+            <p class="mb-0">+91-9876543210</p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-4">
+          <div class="mb-4">
+            <h6 class="section-title">Order Value</h6>
+            <p class="value">$650.00</p>
+          </div>
+
+          <div>
+            <h6 class="section-title">Items</h6>
+            <div class=" border-start border-2 border-warning p-1  ">
+              <p class="fw-semibold mb-1">Clean report Inspection and Analysis Fee</p>
+              <p class="text-muted-small mb-0">Quantity: 1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+<div class="container mt-4 px-0">
+    <div class="row ">
+
+      <!-- 1️⃣ CTRS Agent Card -->
+       <div class="col-lg-4" >
+
+         <div class="order-card bg-white border rounded-4 p-4 flex-fill" style="min-height: 550px;" >
+           <h6 class="section-title"><i class="bi bi-person-circle"></i> Assign CTRS Agent (Optional)</h6>
+   
+           <div class="alert alert-primary d-flex align-items-start">
+             <i class="bi bi-exclamation-triangle-fill me-2 mt-1"></i>
+             <div>
+               <strong>Note:</strong> CTRS Agent assignment is optional. In some countries, samples may go directly to the laboratory without an agent.
+             </div>
+           </div>
+   
+           <div class="mb-3">
+             <label class="form-label fw-semibold">Select CTRS Agent (Optional)</label>
+             <select class="form-select bg-light">
+               <option selected>Choose a CTRS agent or leave empty for direct lab delivery</option>
+               <option>Agent 1</option>
+               <option>Agent 2</option>
+               <option>Agent 3</option>
+             </select>
+           </div>
+   
+           <div>
+             <label class="form-label fw-semibold">Collection Notes (Optional)</label>
+             <textarea class="form-control bg-light" rows="3" placeholder="Special instructions for sample collection..."></textarea>
+           </div>
+         </div>
+       </div>
+
+      <!-- 2️⃣ Laboratory Card -->
+       <div class="col-lg-4" >
+
+         <div class="order-card bg-white border rounded-4 p-4 flex-fill" style="min-height: 550px;" >
+           <h6 class="section-title"><i class="bi bi-flask"></i> Assign Laboratory</h6>
+   
+           <label class="form-label fw-semibold">Select Laboratory <span class="text-danger">*</span></label>
+           <select  id = "labSelect"class="form-select">
+             <option selected disabled>QualityLab Testing Services</option>
+           </select>
+   
+           <div class="lab-card mt-3">
+             <h6 class="fw-bold mb-1">QualityLab Testing Services</h6>
+             <p class="mb-1"><i class="bi bi-geo-alt-fill me-2 text-danger"></i>Dubai Science Park</p>
+             <p class="mb-1"><i class="bi bi-capsule me-2 text-success"></i>Specializations: Pharmaceutical Testing, Chemical Analysis</p>
+             <p class="mb-1"><i class="bi bi-bar-chart-fill me-2 text-info"></i>Current load: 32/50</p>
+             <p class="mb-0"><i class="bi bi-hourglass-split me-2 text-secondary"></i>Avg processing: 3–5 days</p>
+           </div>
+         </div>
+       </div>
+
+      <!-- 3️⃣ Sample Receiver Card -->
+       <div class="col-lg-4" style="min-height: 550px;">
+
+         <div class="order-card bg-white border rounded-4 p-4 flex-fill" style="min-height: 550px;">
+           <h6 class="section-title"><i class="bi bi-box-seam"></i> Sample Receiver Details</h6>
+   
+           <div class="alert alert-warning d-flex align-items-start">
+             <i class="bi bi-exclamation-triangle-fill me-2 mt-1"></i>
+             <div>
+               <strong>Note:</strong> Sample collection can be done by CTRS agents or directly to lab. Specify receiver details for proper coordination.
+             </div>
+           </div>
+   
+           <div class="mb-3">
+             <label class="form-label fw-semibold">Sample Receiver Name *</label>
+             <input type="text" class="form-control bg-light" placeholder="Enter receiver's full name">
+           </div>
+   
+           <div class="mb-3">
+             <label class="form-label fw-semibold">Address *</label>
+             <textarea class="form-control bg-light" rows="3" placeholder="Enter complete address for sample delivery/collection"></textarea>
+           </div>
+   
+           <div class="mb-3">
+             <label class="form-label fw-semibold">Email (Optional)</label>
+             <input type="email" class="form-control bg-light" placeholder="receiver@company.com">
+           </div>
+   
+           <div>
+             <label class="form-label fw-semibold">Phone Number (Optional)</label>
+             <input type="text" class="form-control bg-light" placeholder="+971-50-123-4567">
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+
+
+  
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    const labSelect = document.getElementById('labSelect');
+    const labInfo = document.getElementById('labInfo');
+    const labName = document.getElementById('labName');
+    const labLocation = document.getElementById('labLocation');
+    const labSpecialization = document.getElementById('labSpecialization');
+    const labLoad = document.getElementById('labLoad');
+    const labProcessing = document.getElementById('labProcessing');
+
+    const labs = {
+      quality: {
+        name: 'QualityLab Testing Services',
+        location: 'Dubai Science Park',
+        specialization: 'Specializations: Pharmaceutical Testing, Chemical Analysis',
+        load: 'Current load: 32/50 capacity',
+        processing: 'Avg processing: 3–5 days'
+      },
+      analytics: {
+        name: 'Advanced Analytics Laboratory',
+        location: 'Abu Dhabi Global Hub',
+        specialization: 'Specializations: Environmental Testing, Data Analytics',
+        load: 'Current load: 18/30 capacity',
+        processing: 'Avg processing: 2–4 days'
+      },
+      precision: {
+        name: 'Precision Testing Center',
+        location: 'Sharjah Research Park',
+        specialization: 'Specializations: Material Testing, Structural Analysis',
+        load: 'Current load: 35/40 capacity',
+        processing: 'Avg processing: 4–6 days'
+      }
+    };
+
+    labSelect.addEventListener('change', () => {
+      const selected = labs[labSelect.value];
+      if (selected) {
+        labName.textContent = selected.name;
+        labLocation.innerHTML = `<i class="fa-solid fa-location-dot me-2"></i>${selected.location}`;
+        labSpecialization.innerHTML = `<i class="fa-solid fa-vials me-2"></i>${selected.specialization}`;
+        labLoad.innerHTML = `<i class="fa-solid fa-chart-bar me-2"></i>${selected.load}`;
+        labProcessing.innerHTML = `<i class="fa-solid fa-hourglass-half me-2"></i>${selected.processing}`;
+        labInfo.classList.remove('d-none');
+      }
+    });
+  </script>
+  
+  </body>
+</html>
