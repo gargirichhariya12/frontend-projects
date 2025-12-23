@@ -21,19 +21,19 @@ export default function VantaBackground() {
       points: 12.0,
       maxDistance: 18.0,
       spacing: 15.0,
-      showDots: true,
+      showDots: false,
     });
 
     return () => effect.destroy();
   }, []);
 
   return (
-    <div 
-      ref={vantaRef} 
+    <div
+      ref={vantaRef}
       className="fixed inset-0 -z-10"
       style={{
         filter: 'hue-rotate(250deg) saturate(2)',
-        // This will tint the white lines toward purple
+        
       }}
     />
   );
