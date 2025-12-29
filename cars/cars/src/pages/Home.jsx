@@ -1,3 +1,4 @@
+import CarViewer from "../components/CarViewer";
 import Hero from "../assets/Hero.png";
 import About from "./About";
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       </div>
     </section>
     <About />
+    <CarViewer />
       </>
     
   );

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+  </head>
+  <style>
+    #modal.open{
+      display:block
+    }
+    #overlay.open{
+      display:block
+    }
+
+    #modal{
+      display: none;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid red;
+      padding: 1rem;
+      background-color: aliceblue;
+
+    }
+    #overlay{
+      display:none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.75);
+    }
+  </style>
+  <body>
+    <!-- <div id="app">Hello, World!</div>
+    <div class="container">
+      <p>This is a paragraph inside a container div.</p>
+    </div>
+
+    <div data-test>this has a data attribute</div>
+    <div data-test>this has a data attribute</div>
+    <div data-test>this has a data attribute</div>
+    <button id ="btn">Click me</button> -->
+
+<!-- 
+    <div id = "list">
+      <div class="list-item"></div>
+    </div>
+
+
+    <form id="myForm">
+      <label for ="item-input">New Item</label>
+      <input type="text" id ="item-input" />
+      <button type="submit">Submit</button>
+      </form> -->
+
+      <button id = "open-modal-btn">Open Modal</button>
+
+      <div id="overlay"></div>
+
+      <div id = "modal">
+        <h3>This ia a Modal</h3>
+        <button id ="close-modal-btn">Close Modal</button>
+      </div>
+  </body>
+</html>
