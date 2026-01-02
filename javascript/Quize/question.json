@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Text Machine Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which language is used for styling web pages?",
+    "options": ["HTML", "JQuery", "CSS", "XML"],
+    "answer": 2
+  },
+  {
+    "question": "Which is not a JavaScript framework?",
+    "options": ["React", "Angular", "Vue", "Django"],
+    "answer": 3
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Colorful Style Sheets",
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which tag is used to include JavaScript?",
+    "options": ["<js>", "<script>", "<javascript>", "<code>"],
+    "answer": 1
+  },
+  {
+    "question": "Which company developed JavaScript?",
+    "options": ["Google", "Microsoft", "Netscape", "Apple"],
+    "answer": 2
+  },
+  {
+    "question": "Inside which HTML element do we put CSS?",
+    "options": ["<css>", "<style>", "<script>", "<link>"],
+    "answer": 1
+  },
+  {
+    "question": "Which symbol is used for comments in JavaScript?",
+    "options": ["<!-- -->", "//", "**", "##"],
+    "answer": 1
+  },
+  {
+    "question": "Which method is used to fetch data?",
+    "options": ["get()", "fetch()", "pull()", "request()"],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword declares a constant in JavaScript?",
+    "options": ["var", "let", "const", "static"],
+    "answer": 2
+  }
+]

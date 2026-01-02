@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 flex items-center justify-center text-white">
+
+  <div class="w-full max-w-lg bg-slate-900 p-6 rounded-xl shadow-xl">
+
+    <!-- Progress Bar -->
+    <div class="w-full bg-slate-700 rounded-full h-2 mb-4">
+      <div id="progressBar" class="bg-cyan-400 h-2 rounded-full transition-all duration-500" style="width:0%"></div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz">
+      <h2 id="question" class="text-lg font-semibold mb-4"></h2>
+
+      <div id="options" class="space-y-3"></div>
+
+      <button id="nextBtn"
+        class="mt-5 w-full bg-emerald-500 hover:bg-emerald-600 py-2 rounded-lg transition">
+        Next
+      </button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" class="hidden text-center">
+      <h2 class="text-2xl font-bold mb-2">Quiz Completed</h2>
+      <p id="scoreText" class="mb-4"></p>
+
+      <button onclick="showReview()"
+        class="bg-cyan-500 px-4 py-2 rounded-lg mr-2">
+        Review Answers
+      </button>
+
+      <button onclick="restartQuiz()"
+        class="bg-emerald-500 px-4 py-2 rounded-lg">
+        Restart
+      </button>
+    </div>
+
+    <!-- Review Section -->
+    <div id="review" class="hidden space-y-4 max-h-96 overflow-y-auto"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

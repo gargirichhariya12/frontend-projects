@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #010174;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.title {
+  margin: 20px 0;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+  width: 720px;
+  height: 260px;
+  margin: 40px auto;
+}
+
+.key {
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.white {
+  width: 60px;
+  height: 260px;
+  background: white;
+  z-index: 1;
+}
+
+.white:active,
+.white.active {
+  background: #ddd;
+}
+
+.black {
+  position: absolute;
+  width: 40px;
+  height: 160px;
+  background: black;
+  z-index: 2;
+  margin-left: -5px;
+}
+
+.black:active,
+.black.active {
+  background: #444;
+}
+
+/* Black key positioning */
+[data-note="Db"] { left: 45px; }
+[data-note="Eb"] { left: 105px; }
+[data-note="Gb"] { left: 225px; }
+[data-note="Ab"] { left: 285px; }
+[data-note="Bb"] { left: 345px; }
