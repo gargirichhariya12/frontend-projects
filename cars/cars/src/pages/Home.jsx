@@ -1,4 +1,3 @@
-import CarViewer from "../components/CarViewer";
 import Hero from "../assets/Hero.png";
 import About from "./About";
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
       
 
       {/* Content */}
-      <div className="absolute top-40 z-1 max-w-7xl mx-4 px-6 pt-2  flex flex-col md:flex-row  gap-6">
+      <div className="absolute top-20 z-1 max-w-7xl mx-4 px-6 pt-2  flex flex-col md:flex-row  gap-6">
         <div className="">
           <h1 className="text-4xl md:text-5xl font-semibold text-red-600 leading-tight">
             Luxury isn’t loud. It’s confident.
@@ -26,11 +25,14 @@ export default function Home() {
             Experience precision engineering and effortless performance,
             designed for those who demand more from every drive.
           </p>
+          <button className="mt-6 bg-[#372323] text-white px-6 py-3 border-2 border-dashed border-[#7A010D] rounded-full hover:bg-red-700 transition">
+            Book Now
+          </button>
         </div>
       </div>
     </section>
     <About />
-    <CarViewer />
+    
       </>
     
   );

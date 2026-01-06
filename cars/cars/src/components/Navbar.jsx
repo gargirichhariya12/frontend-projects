@@ -1,14 +1,14 @@
 import React from "react";
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-black px-6 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav className="w-full bg-black px-2 py-2">
+      <div className="w-full flex items-center justify-between">
         
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <span className="text-red-500 text-2xl font-semibold italic">K</span>
-          <span className="text-white text-lg font-light">RentaCar</span>
+        <img src = {logo} alt="Logo" className="h-15 w-30 object-contain"/>
         </div>
 
         {/* Center Navigation */}
@@ -17,20 +17,27 @@ export default function Navbar() {
             Home
           </a>
           <a href="#" className="text-white hover:text-gray-300 transition">
-            About us
+           Fleeds
           </a>
           <a href="#" className="text-white hover:text-gray-300 transition">
-            Contact Us
+          My Booking
           </a>
-          <a href="#" className="text-white hover:text-gray-300 transition">
-            Location
-          </a>
+          
         </div>
 
+        <div  className="">
         {/* Book Now Button */}
-        <button className="text-white px-6 py-2 rounded-full border-2 border-dashed border-white hover:bg-white hover:text-black transition">
+        <button className="text-white px-6 py-2 rounded-full border-2  m-2 border-dashed border-white hover:bg-white hover:text-black transition">
           Book Now
         </button>
+          <a href="#" className="text-white hover:text-gray-300 transition">
+          Dashboard
+          </a>
+          <a href="#" className="text-white hover:text-gray-300 transition bg-orange-600 px-2 py-1 rounded-xl ml-4">
+          G
+          </a>
+
+        </div>
       </div>
     </nav>
   );

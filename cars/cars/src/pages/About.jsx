@@ -1,5 +1,6 @@
 import React from "react";
 import HighlightCard from "../components/HighlightCard";
+import Heading from "../components/Heading";
 import { Gauge, BatteryCharging, Cpu, ShieldCheck } from "lucide-react";
 
 export default function KeyHighlights() {
@@ -8,17 +9,13 @@ export default function KeyHighlights() {
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         {/* Heading */}
-        <h2 className="text-2xl font-semibold text-white mb-14">
-          <span className="border-b-2 border-red-600 pb-1">
-            Key Highlights
-          </span>
-        </h2>
+        <Heading heading="Key Highlights" />
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
           
           <HighlightCard
-            icon={<Gauge size={22} />}
+            icon={<Gauge size={22}  />}
             title="Performance"
             points={[
               "0–100 km/h in 3s",
