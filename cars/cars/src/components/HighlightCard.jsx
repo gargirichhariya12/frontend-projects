@@ -11,7 +11,7 @@ export default function HighlightCard({ icon, title, points }) {
       <div className="relative z-10 flex flex-col items-center text-center gap-3">
 
         {/* Icon */}
-        <div className="w-12 h-12 flex items-center justify-center rounded-full  gradient-border   text-red-600">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full  gradient-border text-red-600">
           {icon}
         </div>
 

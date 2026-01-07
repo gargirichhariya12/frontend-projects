@@ -1,5 +1,7 @@
 import Hero from "../assets/Hero.png";
 import About from "./About";
+import FeatureBoard from "../components/FeatureBoard";
+import Banner from "../components/Banner";
 export default function Home() {
   return (
     <>
@@ -32,6 +34,8 @@ export default function Home() {
       </div>
     </section>
     <About />
+    <FeatureBoard />
+    <Banner />
     
       </>
     
