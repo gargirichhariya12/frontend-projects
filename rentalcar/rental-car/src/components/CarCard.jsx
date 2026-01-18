@@ -1,12 +1,12 @@
-import React from 'react'
-import { User, MapPin, Car, Fuel } from 'lucide-react'
-import { assets } from '../assets/assets';
+import { Car, Fuel, MapPin, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function CarCard({ car }) {
     const currency = import.meta.env.VITE_CURRENCY || '$';
+    const navigate = useNavigate();
 
     return (
-        <div className='group rounded-lg overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer bg-white'>
+        <div onClick={() => {navigate(`/CarDetails/${car._id}`);scrollTo(0, 0);}} className='group rounded-lg overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer bg-white'>
             <div className='relative h-48 overflow-hidden'>
                 <img src={car.image} alt={car.name} className='w-full h-full transition-transform duration-500 group-hover:scale-110 object-cover' />
                 {car.isAvailable && <p className='absolute top-4 left-4 bg-[var(--color-primary)] text-white text-xs px-2.5 py-1 rounded-full'>Available</p>}

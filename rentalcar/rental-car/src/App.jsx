@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Cars from './pages/Cars'
 import CarDetails from './pages/CarDetails'
 import MyBooking from './pages/MyBooking'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/CarDetails/:id' element={<CarDetails />} />
          <Route path ='/MyBooking' element= {<MyBooking/>} />
       </Routes>
+      {!isOwnerPath && <Footer setShowLogin={setShowLogin} />}
     </>
   )
 }
