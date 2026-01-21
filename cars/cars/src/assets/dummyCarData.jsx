@@ -1,6 +1,7 @@
 import car_image1 from "./car_image-1.png";
 import car_image2 from "./car_image-2.png";
 import car_image3 from "./car_image-3.png";
+import car_image4 from "./car_image4.png"
 
 export const dummyCarData = [
     {
@@ -54,6 +55,23 @@ export const dummyCarData = [
         "isAvaliable": true,
         "createdAt": "2025-04-16T08:34:39.592Z",
     },
+    {
+        "_id": "68009c93a3f5fc6338ea7e34",
+        "owner": "67fe3467ed8a8fe17d0ba6e2",
+        "brand": "Ford",
+        "model": "Neo 6",
+        "image": car_image4,
+        "year": 2022,
+        "category": "Sedan",
+        "seating_capacity": 2,
+        "fuel_type": "Diesel",
+        "transmission": "Semi-Automatic",
+        "pricePerDay": 209,
+        "location": "Houston",
+        "description": "This is a mid-size luxury sedan produced by Toyota. The Corolla made its debut in 2008 as the first sedan ever produced by Toyota.",
+        "isAvaliable": true,
+        "createdAt": "2025-04-17T06:15:47.318Z",
+    }
     
 ];
 
