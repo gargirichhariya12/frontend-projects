@@ -41,9 +41,9 @@ const Navbar = ({ setShowLogin }) => {
             </div>
             <button onClick={() => setOpen(!open)} className="sm:hidden">
                 {open ? (
-                    <X size={28} className ="cursor-pointer text-gray-700" />
+                    <X size={28} className="cursor-pointer text-gray-700" />
                 ) : (
-                    <Menu size={28} className ="cursor-pointer text-gray-700" />
+                    <Menu size={28} className="cursor-pointer text-gray-700" />
                 )}
             </button>
         </div>

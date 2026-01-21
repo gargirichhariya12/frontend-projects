@@ -3,9 +3,10 @@ import { User, MapPin, Car, Fuel } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 
 const CarCard = ({ car }) => {
+  
   const navigate = useNavigate()
   return (
-    <div onClick={() => {navigate(`CarDetails${car._id}`); scrollTo(0, 0); }} className="bg-[#0b0b0b] rounded-xl overflow-hidden  gradient-border  transition  gap-10 ">
+    <div onClick={() => {navigate(`/CarDetails/${car._id}`); scrollTo(0, 0); }} className="bg-[#0b0b0b] rounded-xl overflow-hidden  gradient-border  transition  gap-10 ">
 
       {/* Image */}
       <div className="relative overflow-hidden">

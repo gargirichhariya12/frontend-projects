@@ -1,40 +1,63 @@
 import React from "react";
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
+  const menuLinks = [
+    { name: "Home", path: "/" },
+    { name: "Cars", path: "/cars" },
+    { name: "My Bookings", path: "/my-bookings" },
+  ]
+
+  // const ownerMenuLinks = [
+  //   { name: "Dashboard", path: "/owner", icon: dashboardIcon, coloredIcon: dashboardIconColored },
+  //   { name: "Add car", path: "/owner/add-car", icon: addIcon, coloredIcon: addIconColored },
+  //   { name: "Manage Cars", path: "/owner/manage-cars", icon: carIcon, coloredIcon: carIconColored },
+  //   { name: "Manage Bookings", path: "/owner/manage-bookings", icon: listIcon, coloredIcon: listIconColored },
+  // ]
+
   return (
     <nav className="w-full bg-black px-2 py-2">
       <div className="w-full flex items-center justify-between">
-        
+
         {/* Logo */}
         <div className="flex items-center gap-2">
-        <img src = {logo} alt="Logo" className="h-15 w-30 object-contain"/>
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-15 w-30 object-contain" />
+          </Link>
         </div>
 
         {/* Center Navigation */}
-        <div className="hidden md:flex items-center gap-8 px-8 py-3 border border-white/40 rounded-full">
-          <a href="#" className="text-white hover:text-gray-300 transition">
-            Home
-          </a>
-          <a href="#" className="text-white hover:text-gray-300 transition">
-           Fleeds
-          </a>
-          <a href="#" className="text-white hover:text-gray-300 transition">
-          My Booking
-          </a>
-          
-        </div>
+        <div className="border border-white rounded-[2.5rem] p-2">
 
-        <div  className="">
-        {/* Book Now Button */}
-        <button className="text-white px-6 py-2 rounded-full border-2  m-2 border-dashed border-white hover:bg-white hover:text-black transition">
-          Book Now
-        </button>
+        <div
+          className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:border-t border-white/40 right-0
+  flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 
+  transition-all duration-300 z-50
+  ${location.pathname === '/' ? 'bg-[var(--color-light)]' : 'bg-black'} 
+  ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
+        >
+          {menuLinks.map((link, index) => (
+            <Link
+              key={index}
+              to={link.path}
+              className="text-white hover:text-gray-300 transition"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+        </div>
+        <div className="">
+          {/* Book Now Button */}
+          <button className="text-white px-6 py-2 rounded-full border-2  m-2 border-dashed border-white hover:bg-white hover:text-black transition">
+            Book Now
+          </button>
           <a href="#" className="text-white hover:text-gray-300 transition">
-          Dashboard
+            Dashboard
           </a>
           <a href="#" className="text-white hover:text-gray-300 transition bg-orange-600 px-2 py-1 rounded-xl ml-4">
-          G
+            G
           </a>
 
         </div>

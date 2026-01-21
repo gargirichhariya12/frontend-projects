@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Cars' element={<Cars />} />
         <Route path='/CarDetails/:id' element={<CarDetails />} />
-         <Route path ='/MyBooking' element= {<MyBooking/>} />
+        <Route path='/my-bookings' element={<MyBooking />} />
       </Routes>
       {!isOwnerPath && <Footer setShowLogin={setShowLogin} />}
     </>
