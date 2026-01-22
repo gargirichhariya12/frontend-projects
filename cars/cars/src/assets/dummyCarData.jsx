@@ -2,6 +2,8 @@ import car_image1 from "./car_image-1.png";
 import car_image2 from "./car_image-2.png";
 import car_image3 from "./car_image-3.png";
 import car_image4 from "./car_image4.png"
+import user from "./user.jpg"
+import {CarFront, LayoutDashboard, List, Plus} from 'lucide-react'
 
 export const dummyCarData = [
     {
@@ -121,3 +123,29 @@ export const dummyMyBookingsData = [
         "createdAt": "2025-06-10T09:44:25.410Z",
     }
 ]
+
+export const dummyDashboardData = {
+    "totalCars": 4,
+    "totalBookings": 2,
+    "pendingBookings": 0,
+    "completedBookings": 2,
+    "recentBookings": [
+        dummyMyBookingsData[0],
+        dummyMyBookingsData[1]
+    ],
+    "monthlyRevenue": 840
+}
+export const dummyUserData = {
+  "_id": "6847f7cab3d8daecdb517095",
+  "name": "GreatStack",
+  "email": "admin@example.com",
+  "role": "owner",
+  "image": user,
+}
+
+export const ownerMenuLinks = [
+    { name: "Dashboard", path: "/owner", icon: <LayoutDashboard/> },
+    { name: "Add car", path: "/owner/add-car", icon: <Plus/> },
+    { name: "Manage Cars", path: "/owner/manage-cars", icon: <CarFront/>},
+    { name: "Manage Bookings", path: "/owner/manage-bookings", icon: <List/> },
+  ]

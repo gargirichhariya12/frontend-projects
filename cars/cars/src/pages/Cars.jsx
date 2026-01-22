@@ -8,7 +8,7 @@ function Cars(car) {
     <div className='glow-bg'>
       <Select />
       
- <div className="grid grid-cols-1 md:grid-cols-3  gap-16 p-4">
+ <div className="grid grid-cols-1 md:grid-cols-3  gap-16 p-8 mx-8 mt-6 ">
       {dummyCarData.map((car) => (
         <CarCard key={car._id} car={car} />
       ))}

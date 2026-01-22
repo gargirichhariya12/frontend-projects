@@ -43,20 +43,20 @@ const MyBooking = () => {
               <div className=' flex flex-col md:flex-row md:justify-between gap-6 mt-4'>
                 <div>
 
-                <div className='flex items-start gap-2 mt-3'>
-                  <img src={assets.calendar_icon_colored} alt="" className='w-4 h-4 mt-1' />
-                  <div>
-                    <p>Rental Period</p>
-                    <p>{booking.pickupDate.split('T')[0]} To {booking.returnDate.split('T')[0]}</p>
+                  <div className='flex items-start gap-2 mt-3'>
+                    <img src={assets.calendar_icon_colored} alt="" className='w-4 h-4 mt-1' />
+                    <div>
+                      <p>Rental Period</p>
+                      <p>{booking.pickupDate.split('T')[0]} To {booking.returnDate.split('T')[0]}</p>
+                    </div>
                   </div>
-                </div>
-                <div className='flex items-start gap-2 mt-3'>
-                  <img src={assets.location_icon_colored} alt="" className='w-4 h-4 mt-1' />
-                  <div>
-                    <p className='text-gray-500'>Pick-up Location</p>
-                    <p>{booking.car.location}</p>
+                  <div className='flex items-start gap-2 mt-3'>
+                    <img src={assets.location_icon_colored} alt="" className='w-4 h-4 mt-1' />
+                    <div>
+                      <p className='text-gray-500'>Pick-up Location</p>
+                      <p>{booking.car.location}</p>
+                    </div>
                   </div>
-                </div>
                 </div>
                 {/* Price Info */}
                 <div className='md:col-span-1 flex flex-col justify-between gap-6'>

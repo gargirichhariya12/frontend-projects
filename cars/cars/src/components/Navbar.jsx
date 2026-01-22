@@ -1,23 +1,20 @@
-import React from "react";
+import { useState } from 'react';
+import React  from "react";
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate , useLocation } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar({setShowLogin}) {
   const menuLinks = [
     { name: "Home", path: "/" },
     { name: "Cars", path: "/cars" },
     { name: "My Bookings", path: "/my-bookings" },
   ]
-
-  // const ownerMenuLinks = [
-  //   { name: "Dashboard", path: "/owner", icon: dashboardIcon, coloredIcon: dashboardIconColored },
-  //   { name: "Add car", path: "/owner/add-car", icon: addIcon, coloredIcon: addIconColored },
-  //   { name: "Manage Cars", path: "/owner/manage-cars", icon: carIcon, coloredIcon: carIconColored },
-  //   { name: "Manage Bookings", path: "/owner/manage-bookings", icon: listIcon, coloredIcon: listIconColored },
-  // ]
+ const navigate = useNavigate()
+ const [open, setOpen] = useState(false)
+  const location = useLocation()
 
   return (
-    <nav className="w-full bg-black px-2 py-2">
+    <nav className="w-full bg-black px-2 py-2 sticky">
       <div className="w-full flex items-center justify-between">
 
         {/* Logo */}
@@ -53,13 +50,15 @@ export default function Navbar() {
           <button className="text-white px-6 py-2 rounded-full border-2  m-2 border-dashed border-white hover:bg-white hover:text-black transition">
             Book Now
           </button>
-          <a href="#" className="text-white hover:text-gray-300 transition">
-            Dashboard
-          </a>
-          <a href="#" className="text-white hover:text-gray-300 transition bg-orange-600 px-2 py-1 rounded-xl ml-4">
-            G
-          </a>
+          
+                    <button onClick={() => navigate('/owner')} className='cursor-pointer text-white'>Dashboard</button>
 
+                    <button onClick={() => setShowLogin(true)}
+                        className="bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white cursor-pointer px-8 py-2 rounded-lg transition"
+                    >
+                        Log In
+                    </button>
+                    
         </div>
       </div>
     </nav>
