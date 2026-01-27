@@ -91,7 +91,7 @@
 
 import React, { useState } from 'react'
 import Title from "../../components/Owner/Title";
-import { Upload } from 'lucide-react'
+import { Upload, Check} from 'lucide-react'
 
 const currency = import.meta.env.VITE_CURRENCY
 
@@ -108,7 +108,7 @@ const AddCar = () => {
     seating_capacity: 0,
     location: '',
     description: '',
-    transmission:''
+    transmission: ''
   })
 
   const onSubmitHandler = async (e) => {
@@ -121,18 +121,7 @@ const AddCar = () => {
 
       <form onSubmit={onSubmitHandler} className='flex flex-col gap-5 text-gray-500 text-sm mt-6 '>
 
-        {/*Car Image */}
-        <div className='text flex gap-4'>
-          <label htmlFor="car-image" className='border rounded-lg flex items-center justify-center h-24 w-24 cursor-pointer'>
-            {image ? (
-              <img src={URL.createObjectURL(image)} alt="car" className='h-24 w-24 object-cover rounded' />
-            ) : (
-              <Upload className="h-10 w-10 text-gray-400" />
-            )}
-            <input type="file" id="car-image" accept="image/*" hidden onChange={e => setImage(e.target.files[0])} />
-          </label>
-          <p className='text-sm text-gray-500 mt-1'>Upload a picture of your car</p>
-        </div>
+
 
         {/* car brand and modal */}
         <div className='grid grid-cols-2 gap-3'>
@@ -206,6 +195,58 @@ const AddCar = () => {
             </div>
           </div>
         </div>
+
+        <div className='flex flex-col w-full'>
+          <label className='text-lg'>Location</label>
+          <div className='gradient-border mt-1'>
+            <select
+              className='relative z-10 px-3 py-2 bg-black/40 text-gray-400 focus:outline-none w-full rounded-[10px]'
+              value={car.location}
+              onChange={e => setCar({ ...car, location: e.target.value })}>
+              <option value='' className='bg-black/40 text-white' >Select a location</option>
+              <option value='Vijay Nagar' className='bg-black/40 text-white'>Vijay Nagar</option>
+              <option value='Mahalaxmi Nagar' className='bg-black/40 text-white' >Mahalaxmi Nagar</option>
+              <option value='C21' className='bg-black/40 text-white' >C21</option>
+            </select>
+          </div>
+        </div>
+        {/* Car Description  */}
+        <div className='flex flex-col w-full'>
+          <label className='text text-lg'>Description </label>
+          <div className='gradient-border '>
+            <textarea placeholder='e.g' value={car.description} className='relative z-10 px-3 py-2 mt-1 bg-black/40  text-gray-400 focus:outline-none w-full rounded-lg' onChange={e => setCar({ ...car, description: e.target.value })} />
+          </div>
+
+        </div>
+
+        {/* Car Image Upload */}
+        <div className="flex items-center gap-4">
+          <label
+            htmlFor="car-image"
+            className="border-2 border-dashed border-gray-500 rounded-xl flex flex-col items-center justify-center h-[8rem] w-1/2 cursor-pointer hover:border-purple-500 transition"
+          >
+            {image ? (
+              <img src={URL.createObjectURL(image)} alt="car" className="h-full w-full object-cover rounded-2xl"
+              />
+            ) : (
+              <>
+                <Upload className="h-8 w-8 text-gray-400" />
+                <span className="text-xs text-gray-400 mt-1">Upload</span>
+              </>
+            )}
+            <input type="file"  id="car-image" accept="image/*"  hidden onChange={(e) => setImage(e.target.files[0])}/>
+          </label>
+          <p className="text-sm text-gray-400">
+            Upload a picture of your car (maximum 20 MB)
+          </p>
+        </div>
+
+
+            <button className='flex items-center gap-2 px-4 py-2.5 mt-4 bg-blue-500 text-white rounded-md font-medium w-max cursor-pointer'>
+              <Check/> List Your Car
+            </button>
+
+
 
       </form>
 

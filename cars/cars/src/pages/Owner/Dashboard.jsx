@@ -25,7 +25,6 @@ function Dashboard() {
   
   const { recentBookings, monthlyRevenue } = dummyDashboardData;
 
-  console.log(dummyDashboardData)
   return (
     <div className='px-4 pt-10 md:px-10 flex-1'>
       <Title title='Admin Dashboard' subTitle='Monitor overall platform performance including total cars, bookings, revenue, and recent activities' />

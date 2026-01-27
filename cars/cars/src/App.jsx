@@ -12,12 +12,14 @@ import Dashboard from './pages/Owner/Dashboard';
 import AddCar from './pages/Owner/AddCar';
 import ManageCar from './pages/Owner/ManageCar';
 import ManageBooking from './pages/Owner/ManageBooking';
+import Login from './components/Login';
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false)
   const isOwnerPath = useLocation().pathname.startsWith('/owner')
   return (
     <>
+    {showLogin && !isOwnerPath && <Login setShowLogin={setShowLogin} />}
       {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,7 +35,7 @@ export default function App() {
         </Route>
       </Routes>
 
-      {!isOwnerPath && <Footer setShowLogin={setShowLogin} />}
+       <Footer  />
     </>
   )
 }
