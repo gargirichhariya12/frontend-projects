@@ -20,11 +20,11 @@ const Login = ({ setShowLogin }) => {
   }
 
   return (
-    <div onClick={() => setShowLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-100 flex items-center text-sm bg-black/50'>
+    <div onClick={() => setShowLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-50 flex items-center text-sm bg-black/50  justify-center'>
       <form
         onClick={(e) => e.stopPropagation()}
         onSubmit={handleSubmit}
-        className="sm:w-87.5 w-full text-center bg-gray-900 border border-gray-800 rounded-2xl px-8"
+        className="sm:w-87.5 w-full text-center bg-gray-900 border border-gray-800 rounded-2xl px-8 max-w-xl"
       >
         <h1 className="text-white text-3xl mt-10 font-medium">
           {state === "login" ? "Login" : "Sign up"}
