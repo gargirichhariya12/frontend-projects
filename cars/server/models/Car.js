@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const { ObjectId } = mongoose.Schema.Types;
 
 const carSchema = new mongoose.Schema({
-  owner: { type: ObjectId, ref: "User" },
+  owner: { type: ObjectId, ref: "User", required:true },
   brand: { type: String, required: true },
   model: { type: String, required: true },
   image: { type: String, required: true },
@@ -15,7 +15,7 @@ const carSchema = new mongoose.Schema({
   pricePerDay: { type: Number, required: true },
   location: { type: String, required: true },
   description: { type: String, required: true },
-  isAvaliable: { type: Boolean, default: true },
+  isAvailable: { type: Boolean, default: true },
 }, {timestamps:true});
 
 
