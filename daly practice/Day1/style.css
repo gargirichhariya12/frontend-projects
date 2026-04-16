@@ -1,0 +1,28 @@
+*{
+    background-color: black;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 3px;
+    background-color: crimson;
+    position: absolute;
+    z-index: 10;
+}
+
